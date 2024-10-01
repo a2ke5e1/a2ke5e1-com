@@ -29,7 +29,7 @@ export default function RootLayout({
           <div className="sm:block hidden">
             <NavigationRail />
           </div>
-          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-2 h-[180vh] mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
+          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-4 h-[180vh] mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
             {children}
           </div>
         </div>

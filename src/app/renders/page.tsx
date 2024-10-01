@@ -1,3 +1,3 @@
 export default function Renders() {
-    return <div>renders</div>
+    return <div className="text-headline-large">renders</div>
 }

@@ -65,6 +65,141 @@ const config: Config = {
         "surface-container-highest":
           "var(--md-sys-color-surface-container-highest)",
       },
+      fontSize: {
+        "display-small": [
+          "var(--md-sys-typescale-display-small-size, 2.25rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-display-small-line-height, 2.75rem)",
+            fontWeight:
+              "var(--md-sys-typescale-display-small-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "display-medium": [
+          "var(--md-sys-typescale-display-medium-size, 2.8125rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-display-medium-line-height, 3.25rem)",
+            fontWeight:
+              "var(--md-sys-typescale-display-medium-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "display-large": [
+          "var(--md-sys-typescale-display-large-size, 3.5625rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-display-large-line-height, 4rem)",
+            fontWeight:
+              "var(--md-sys-typescale-display-large-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "headline-small": [
+          "var(--md-sys-typescale-headline-small-size, 1.5rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-headline-small-line-height, 2rem)",
+            fontWeight:
+              "var(--md-sys-typescale-headline-small-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "headline-medium": [
+          "var(--md-sys-typescale-headline-medium-size, 1.75rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-headline-medium-line-height, 2.25rem)",
+            fontWeight:
+              "var(--md-sys-typescale-headline-medium-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "headline-large": [
+          "var(--md-sys-typescale-headline-large-size, 2rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-headline-large-line-height, 2.5rem)",
+            fontWeight:
+              "var(--md-sys-typescale-headline-large-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "title-small": [
+          "var(--md-sys-typescale-title-small-size, 0.875rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-title-small-line-height, 1.25rem)",
+            fontWeight:
+              "var(--md-sys-typescale-title-small-weight, var(--md-ref-typeface-weight-medium, 500))",
+          },
+        ],
+        "title-medium": [
+          "var(--md-sys-typescale-title-medium-size, 1rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-title-medium-line-height, 1.5rem)",
+            fontWeight:
+              "var(--md-sys-typescale-title-medium-weight, var(--md-ref-typeface-weight-medium, 500))",
+          },
+        ],
+        "title-large": [
+          "var(--md-sys-typescale-title-large-size, 1.375rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-title-large-line-height, 1.75rem)",
+            fontWeight:
+              "var(--md-sys-typescale-title-large-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "body-small": [
+          "var(--md-sys-typescale-body-small-size, 0.75rem)",
+          {
+            lineHeight: "var(--md-sys-typescale-body-small-line-height, 1rem)",
+            fontWeight:
+              "var(--md-sys-typescale-body-small-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "body-medium": [
+          "var(--md-sys-typescale-body-medium-size, 0.875rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-body-medium-line-height, 1.25rem)",
+            fontWeight:
+              "var(--md-sys-typescale-body-medium-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "body-large": [
+          "var(--md-sys-typescale-body-large-size, 1rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-body-large-line-height, 1.5rem)",
+            fontWeight:
+              "var(--md-sys-typescale-body-large-weight, var(--md-ref-typeface-weight-regular, 400))",
+          },
+        ],
+        "label-small": [
+          "var(--md-sys-typescale-label-small-size, 0.6875rem)",
+          {
+            lineHeight: "var(--md-sys-typescale-label-small-line-height, 1rem)",
+            fontWeight:
+              "var(--md-sys-typescale-label-small-weight, var(--md-ref-typeface-weight-medium, 500))",
+          },
+        ],
+        "label-medium": [
+          "var(--md-sys-typescale-label-medium-size, 0.75rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-label-medium-line-height, 1rem)",
+            fontWeight:
+              "var(--md-sys-typescale-label-medium-weight, var(--md-ref-typeface-weight-medium, 500))",
+          },
+        ],
+        "label-large": [
+          "var(--md-sys-typescale-label-large-size, 0.875rem)",
+          {
+            lineHeight:
+              "var(--md-sys-typescale-label-large-line-height, 1.25rem)",
+            fontWeight:
+              "var(--md-sys-typescale-label-large-weight, var(--md-ref-typeface-weight-medium, 500))",
+          },
+        ],
+      },
     },
   },
   variants: {
