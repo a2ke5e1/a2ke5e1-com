@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className={roboto.className}>
         <div className="flex flex-row">
           <NavigationRail />
-          <div className="bg-surface-container text-on-surface w-full rounded-2xl p-2 h-[80vh] my-4 mr-4">
+          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-2 h-[80vh] my-4 mr-4">
             {children}
           </div>
         </div>
