@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import { Roboto } from "next/font/google";
 import "./globals.css";
-import { NavigationRail } from "@/components/navigation-rail/navigation-rail";
-
-
+import {
+  BottomNavigation,
+  NavigationRail,
+} from "@/components/navigation-rail/navigation-rail";
 
 const roboto = Roboto({
   weight: ["400", "500", "700"],
@@ -21,16 +22,19 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
-
   return (
     <html lang="en">
       <body className={roboto.className}>
         <div className="flex flex-row">
-          <NavigationRail />
-          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-2 h-[80vh] my-4 mr-4">
+          <div className="sm:block hidden">
+            <NavigationRail />
+          </div>
+          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-2 h-[180vh] mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
             {children}
           </div>
+        </div>
+        <div className="sm:hidden block">
+          <BottomNavigation />
         </div>
       </body>
     </html>
