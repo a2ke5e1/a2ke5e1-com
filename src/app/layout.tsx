@@ -26,7 +26,7 @@ export default function RootLayout({
           </div>
           <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-4 mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
             {children}
-            <div className="my-2 flex flex-col gap-2">
+            <div className="flex flex-col gap-2">
               <SwigglyLine />
               <Footer />
             </div>

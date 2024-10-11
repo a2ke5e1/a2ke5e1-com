@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { createComponent } from "@lit/react";
 import { MdElevatedButton } from "@material/web/button/elevated-button";
 import { MdFilledButton } from "@material/web/button/filled-button";
@@ -11,6 +11,7 @@ import { MdIconButton } from "@material/web/iconbutton/icon-button";
 import { MdFilledIconButton } from "@material/web/iconbutton/filled-icon-button";
 import { MdFilledTonalIconButton } from "@material/web/iconbutton/filled-tonal-icon-button";
 import { MdOutlinedIconButton } from "@material/web/iconbutton/outlined-icon-button";
+import { Icon } from "../icon/icon";
 
 export const ElevatedButton = createComponent({
   tagName: "md-elevated-button",
@@ -65,3 +66,44 @@ export const OutlinedIconButton = createComponent({
   elementClass: MdOutlinedIconButton,
   react: React,
 });
+
+export const ThemeToggleButton = () => {
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    const userTheme = localStorage.getItem("theme");
+    const systemPrefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches;
+    if (userTheme) {
+      setTheme(userTheme);
+    } else if (systemPrefersDark) {
+      setTheme("dark");
+    }
+  }, []);
+
+  useEffect(() => {
+    if (theme === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme(theme === "light" ? "dark" : "light");
+  };
+
+  const active = theme === "light";
+
+  return (
+    <IconButton onClick={toggleTheme}>
+      <Icon>
+        <span className={"material-symbols-rounded"}>
+          {active ? "dark_mode" : "light_mode"}
+        </span>
+      </Icon>
+    </IconButton>
+  );
+};

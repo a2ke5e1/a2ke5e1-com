@@ -8,6 +8,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Icon } from "@/components/icon/icon";
 import { Ripple } from "@/components/ripple/ripple";
+import { ThemeToggleButton } from "@/components/button/button";
 
 // Define the styles for the nav link using cva
 const navLinkVariants = cva(
@@ -97,7 +98,8 @@ export const NavigationRail = () => {
   };
 
   return (
-    <div className="bg-surface text-on-surface w-[4.5rem] h-screen flex flex-col justify-center fixed top-0 left-0">
+    <div className="bg-surface text-on-surface w-[4.5rem] h-screen flex flex-col justify-between fixed top-0 left-0">
+      <div></div>
       <div className="flex flex-col mx-auto w-fit h-fit my-2 gap-4">
         <NavLink
           href="/"
@@ -132,10 +134,12 @@ export const NavigationRail = () => {
           active={isSelected("/about")}
         />
       </div>
+      <div className="flex flex-col mx-auto w-fit h-fit my-2 gap-4">
+        <ThemeToggleButton />
+      </div>
     </div>
   );
 };
-
 
 export const BottomNavigation = () => {
   const routerPathName = usePathname();
