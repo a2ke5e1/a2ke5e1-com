@@ -23,7 +23,7 @@ const aboutMe = {
     },
   },
   languagesAndFrameworks: {
-    languages: ["Java", "Kotlin", "Dart", "JavaScript", "TypeScript"],
+    languages: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript"],
     frameworks: ["Android SDK", "Flutter", "React", "Next.js"],
   },
 };
@@ -78,13 +78,13 @@ export default function About() {
           <article className="text-title-medium text-on-tertiary-container">
             <p>Languages</p>
             <p className="text-body-medium">
-              {aboutMe.languagesAndFrameworks.languages.join(", ")}
+              {aboutMe.languagesAndFrameworks.languages.join()}
             </p>
           </article>
           <article className="text-title-medium text-on-tertiary-container">
             <p>Frameworks</p>
             <p className="text-body-medium">
-              {aboutMe.languagesAndFrameworks.frameworks.join(", ")}
+              {aboutMe.languagesAndFrameworks.frameworks.join()}
             </p>
           </article>
         </div>
