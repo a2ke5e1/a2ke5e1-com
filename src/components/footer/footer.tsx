@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export const SwigglyLine = () => {
   return (
     <svg
@@ -35,5 +37,35 @@ export const SwigglyLine = () => {
 };
 
 export const Footer = () => {
-  return <div>Footer</div>;
+  return (
+    <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+      <div className="flex flex-col my-8">
+        <Link
+          href={"https://www.a2ke5e1.com/"}
+          className="text-title-medium font-bold"
+        >
+          a2ke5e1.com
+        </Link>
+        <Link
+          href="mailto:aakapurv@gmail.com"
+          className="hover:underline hover:underline-offset-2 text-body-medium -mt-1"
+        >
+          aakapurv@gmail.com
+        </Link>
+      </div>
+      <div className="flex flex-col my-8 col-span-2"></div>
+      <div className="flex flex-col my-8">
+        <a className="text-title-small font-bold">{"Build with"}</a>
+        <p className="text-body-medium">
+          {"Next.js, Tailwind CSS, Material Web and TypeScript. "}
+          <Link
+            href="https://github.com/a2ke5e1/a2ke5e1-com"
+            className="hover:underline hover:underline-offset-2 text-tertiary font-bold text-label-small"
+          >
+            https://github.com/a2ke5e1/a2ke5e1-com
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
 };

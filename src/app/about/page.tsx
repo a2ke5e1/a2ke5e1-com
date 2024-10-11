@@ -52,7 +52,7 @@ const Section = ({
 // Experience Component
 const Experience = () => (
   <Section title="Experience">
-    <article className="text-title-medium text-on-tertiary-container">
+    <article className="text-title-medium text-on-surface-variant">
       <p>{aboutMe.experience[0].role}</p>
       <p className="text-body-medium">{aboutMe.experience[0].company}</p>
       <p className="text-body-small">{aboutMe.experience[0].duration}</p>
@@ -63,7 +63,7 @@ const Experience = () => (
 // Education Component
 const Education = () => (
   <Section title="Education">
-    <article className="text-title-medium text-on-tertiary-container">
+    <article className="text-title-medium text-on-surface-variant">
       <p>{aboutMe.education.undergraduate.name}</p>
       <p className="text-body-medium">
         {aboutMe.education.undergraduate.institute}
@@ -75,13 +75,13 @@ const Education = () => (
 // Languages & Frameworks Component
 const LanguagesAndFrameworks = () => (
   <Section title="Languages & Frameworks">
-    <article className="text-title-medium text-on-tertiary-container">
+    <article className="text-title-medium text-on-surface-variant">
       <p>Languages</p>
       <p className="text-body-medium">
         {aboutMe.languagesAndFrameworks.languages.join(", ")}
       </p>
     </article>
-    <article className="text-title-medium text-on-tertiary-container">
+    <article className="text-title-medium text-on-surface-variant">
       <p>Frameworks</p>
       <p className="text-body-medium">
         {aboutMe.languagesAndFrameworks.frameworks.join(", ")}
