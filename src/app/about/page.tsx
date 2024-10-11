@@ -1,8 +1,9 @@
 import { Metadata } from "next";
 import Link from "next/link";
 
+// About Me Data
 const aboutMe = {
-  experince: [
+  experience: [
     {
       role: "SDE Intern",
       company: "duuet.care",
@@ -28,11 +29,68 @@ const aboutMe = {
   },
 };
 
+// Metadata for the page
 export const metadata: Metadata = {
   title: "About | a2ke5e1.com",
   description: "About Apurv Ajay Kumar",
 };
 
+// Reusable Section Component
+const Section = ({
+  title,
+  children,
+}: {
+  title: string;
+  children: React.ReactNode;
+}) => (
+  <div className="rounded-xl flex gap-4 flex-col">
+    <h2 className="text-headline-medium font-bold">{title}</h2>
+    {children}
+  </div>
+);
+
+// Experience Component
+const Experience = () => (
+  <Section title="Experience">
+    <article className="text-title-medium text-on-tertiary-container">
+      <p>{aboutMe.experience[0].role}</p>
+      <p className="text-body-medium">{aboutMe.experience[0].company}</p>
+      <p className="text-body-small">{aboutMe.experience[0].duration}</p>
+    </article>
+  </Section>
+);
+
+// Education Component
+const Education = () => (
+  <Section title="Education">
+    <article className="text-title-medium text-on-tertiary-container">
+      <p>{aboutMe.education.undergraduate.name}</p>
+      <p className="text-body-medium">
+        {aboutMe.education.undergraduate.institute}
+      </p>
+    </article>
+  </Section>
+);
+
+// Languages & Frameworks Component
+const LanguagesAndFrameworks = () => (
+  <Section title="Languages & Frameworks">
+    <article className="text-title-medium text-on-tertiary-container">
+      <p>Languages</p>
+      <p className="text-body-medium">
+        {aboutMe.languagesAndFrameworks.languages.join(", ")}
+      </p>
+    </article>
+    <article className="text-title-medium text-on-tertiary-container">
+      <p>Frameworks</p>
+      <p className="text-body-medium">
+        {aboutMe.languagesAndFrameworks.frameworks.join(", ")}
+      </p>
+    </article>
+  </Section>
+);
+
+// Main About Component
 export default function About() {
   return (
     <div className="flex flex-col gap-8 mb-8">
@@ -54,40 +112,9 @@ export default function About() {
         <div className="bg-surface-bright rounded-xl h-80"></div>
       </div>
       <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-2 gap-3 w-fit mx-auto">
-        <div className="rounded-xl flex gap-4 flex-col">
-          <h2 className="text-headline-medium font-bold">Experince</h2>
-          <article className="text-title-medium text-on-tertiary-container">
-            <p>{aboutMe.experince[0].role}</p>
-            <p className="text-body-medium">{aboutMe.experince[0].company}</p>
-            <p className="text-body-small">{aboutMe.experince[0].duration}</p>
-          </article>
-        </div>
-        <div className="rounded-xl flex gap-4 flex-col">
-          <h2 className="text-headline-medium font-bold">Education</h2>
-          <article className="text-title-medium text-on-tertiary-container">
-            <p>{aboutMe.education.undergraduate.name}</p>
-            <p className="text-body-medium">
-              {aboutMe.education.undergraduate.institute}
-            </p>
-          </article>
-        </div>
-        <div className="rounded-xl flex gap-4 flex-col">
-          <h2 className="text-headline-medium font-bold">
-            Languages & Frameworks
-          </h2>
-          <article className="text-title-medium text-on-tertiary-container">
-            <p>Languages</p>
-            <p className="text-body-medium">
-              {aboutMe.languagesAndFrameworks.languages.join()}
-            </p>
-          </article>
-          <article className="text-title-medium text-on-tertiary-container">
-            <p>Frameworks</p>
-            <p className="text-body-medium">
-              {aboutMe.languagesAndFrameworks.frameworks.join()}
-            </p>
-          </article>
-        </div>
+        <Experience />
+        <Education />
+        <LanguagesAndFrameworks />
       </div>
     </div>
   );
