@@ -1,16 +1,11 @@
 import type { Metadata } from "next";
-import { Roboto } from "next/font/google";
 import "./globals.css";
 import {
   BottomNavigation,
   NavigationRail,
 } from "@/components/navigation-rail/navigation-rail";
+import { Footer, SwigglyLine } from "@/components/footer/footer";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  display: "swap",
-  subsets: ["latin-ext"],
-});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,14 +18,18 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={roboto.className}>
+    <html lang="en" className="" >
+      <body>
         <div className="flex flex-row">
           <div className="sm:block hidden">
             <NavigationRail />
           </div>
-          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-4 h-[180vh] mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
+          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-4 mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
             {children}
+            <div className="my-2 flex flex-col gap-2">
+              <SwigglyLine />
+              <Footer />
+            </div>
           </div>
         </div>
         <div className="sm:hidden block">
