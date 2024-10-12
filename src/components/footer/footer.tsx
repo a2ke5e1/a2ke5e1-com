@@ -80,15 +80,15 @@ export const Footer = () => {
       </div>
       <div className="flex flex-col">
         <a className="text-title-small font-bold">{"Build with"}</a>
-        <p className="text-body-medium my-2">
-          {"Next.js, Tailwind CSS, Material Web and TypeScript. \n"}
-          <Link
-            href="https://github.com/a2ke5e1/a2ke5e1-com"
-            className="hover:underline hover:underline-offset-2 text-tertiary font-bold text-label-small"
-          >
-            https://github.com/a2ke5e1/a2ke5e1-com
-          </Link>
+        <p className="text-body-medium mt-2">
+          {"Next.js, Tailwind CSS, Material Web and TypeScript."}
         </p>
+        <Link
+          href="https://github.com/a2ke5e1/a2ke5e1-com"
+          className="hover:underline hover:underline-offset-2 text-tertiary font-bold text-label-small"
+        >
+          https://github.com/a2ke5e1/a2ke5e1-com
+        </Link>
       </div>
     </div>
   );

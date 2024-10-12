@@ -11,11 +11,11 @@ const RenderPage: NextPage = () => {
     <>
       <div className="mb-8 flex flex-col gap-4">
         <div className="bg-tertiary-container sm:p-14 p-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
-          <h1 className="sm:font-bold sm:text-display-large text-display-small">
+          <h1 className="font-bold sm:text-display-large text-display-small font">
             {"Renders & Artworks"}
           </h1>
           <p className="sm:text-title-small text-body-small text-on-tertiary-container">
-            Some wallpapers, logos and other artwork I have created while
+            Some wallpapers, logos and other artworks I have created while
             learning Blender
           </p>
         </div>
@@ -29,7 +29,7 @@ const RenderPage: NextPage = () => {
               width={16}
               height={9}
               layout="responsive"
-              className="rounded-2xl aspect-video object-cover"
+              className="rounded-2xl aspect-video object-cover hover:ring-2 ring-tertiary"
               placeholder="blur"
               blurDataURL={item.blur}
             />
