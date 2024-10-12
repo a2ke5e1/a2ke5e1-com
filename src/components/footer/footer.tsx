@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { aboutMe } from "@/app/about/page";
 
 export const SwigglyLine = () => {
   return (
@@ -38,26 +39,49 @@ export const SwigglyLine = () => {
 
 export const Footer = () => {
   return (
-    <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-      <div className="flex flex-col my-8">
+    <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-8">
+      <div className="flex flex-col">
         <Link
           href={"https://www.a2ke5e1.com/"}
           className="text-title-medium font-bold"
         >
           a2ke5e1.com
         </Link>
+        <a className="text-body-small my-1">{aboutMe.aboutWebsite}</a>
         <Link
-          href="mailto:aakapurv@gmail.com"
-          className="hover:underline hover:underline-offset-2 text-body-medium -mt-1"
+          href={`mailto:${aboutMe.email}`}
+          className="text-body-small items-center flex flex-row gap-1"
         >
-          aakapurv@gmail.com
+          <span className="material-symbols-outlined text-body-small">
+            email
+          </span>
+          <span className="hover:underline hover:underline-offset-2 ">
+            {aboutMe.email}
+          </span>
         </Link>
       </div>
-      <div className="flex flex-col my-8 col-span-2"></div>
-      <div className="flex flex-col my-8">
+      <div className="flex flex-col"></div>
+      <div className="flex flex-col">
+        <a className="text-title-small font-bold">{"Follow Me"}</a>
+        <div className="flex flex-col gap-1 my-2">
+          {Object.entries(aboutMe.socialMedia).map(([key, value]) => (
+            <Link
+              href={value}
+              key={key}
+              className="hover:underline hover:underline-offset-2 text-body-medium"
+            >
+              {
+                // uppercase the first letter of the key
+                key.charAt(0).toUpperCase() + key.slice(1)
+              }
+            </Link>
+          ))}
+        </div>
+      </div>
+      <div className="flex flex-col">
         <a className="text-title-small font-bold">{"Build with"}</a>
-        <p className="text-body-medium">
-          {"Next.js, Tailwind CSS, Material Web and TypeScript. "}
+        <p className="text-body-medium my-2">
+          {"Next.js, Tailwind CSS, Material Web and TypeScript. \n"}
           <Link
             href="https://github.com/a2ke5e1/a2ke5e1-com"
             className="hover:underline hover:underline-offset-2 text-tertiary font-bold text-label-small"

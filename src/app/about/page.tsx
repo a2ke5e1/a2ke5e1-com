@@ -2,7 +2,11 @@ import { Metadata } from "next";
 import Link from "next/link";
 
 // About Me Data
-const aboutMe = {
+export const aboutMe = {
+  name: "Apurv Ajay Kumar",
+  aboutWebsite:
+    "Crafted by Apurv Ajay Kumar, this portfolio showcases my expertise in web and app development, focusing on creating seamless, user-friendly experiences.",
+  email: "akapurv@gmail.com",
   experience: [
     {
       role: "SDE Intern",
@@ -26,6 +30,13 @@ const aboutMe = {
   languagesAndFrameworks: {
     languages: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript"],
     frameworks: ["Android SDK", "Flutter", "React", "Next.js"],
+  },
+  socialMedia: {
+    github: "https://www.github.com/a2ke5e1",
+    linkedin: "https://www.linkedin.com/in/a2ke5e1",
+    x: "https://www.x.com/a2ke5e1",
+    instagram: "https://www.instagram.com/a2ke5e1",
+    youtube: "https://www.youtube.com/@a2ke5e1",
   },
 };
 
@@ -111,7 +122,7 @@ export default function About() {
         </div>
         <div className="bg-surface-bright rounded-xl h-80"></div>
       </div>
-      <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 sm:gap-2 gap-3 w-fit mx-auto">
+      <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
         <Experience />
         <Education />
         <LanguagesAndFrameworks />
