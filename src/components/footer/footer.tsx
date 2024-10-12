@@ -39,7 +39,7 @@ export const SwigglyLine = () => {
 
 export const Footer = () => {
   return (
-    <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-8">
+    <div className="grid grid-flow-row grid-cols-1 sm:grid-cols-2 md:grid-cols-4 my-8 sm:gap-2 gap-4">
       <div className="flex flex-col">
         <Link
           href={"https://www.a2ke5e1.com/"}

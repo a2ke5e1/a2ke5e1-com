@@ -1,5 +1,3 @@
-
-
 import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
@@ -12,10 +10,13 @@ const RenderPage: NextPage = () => {
   return (
     <>
       <div className="mb-8 flex flex-col gap-4">
-        <div className="bg-tertiary-container p-14 rounded-xl flex gap-1 flex-col justify-center items-center">
-          <h1 className="text-display-large font-bold">{"Renders & Artworks"}</h1>
-          <p className="text-title-small text-on-tertiary-container">
-            Some wallpapers, logos and other artwork I have created while learning Blender
+        <div className="bg-tertiary-container sm:p-14 p-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
+          <h1 className="sm:font-bold sm:text-display-large text-display-small">
+            {"Renders & Artworks"}
+          </h1>
+          <p className="sm:text-title-small text-body-small text-on-tertiary-container">
+            Some wallpapers, logos and other artwork I have created while
+            learning Blender
           </p>
         </div>
         <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2">
@@ -25,10 +26,10 @@ const RenderPage: NextPage = () => {
               src={item.img}
               alt={item.title}
               loading="lazy"
-              width={164}
-              height={164}
+              width={16}
+              height={9}
               layout="responsive"
-              className="rounded-2xl"
+              className="rounded-2xl aspect-video object-cover"
               placeholder="blur"
               blurDataURL={item.blur}
             />

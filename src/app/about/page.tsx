@@ -6,7 +6,7 @@ export const aboutMe = {
   name: "Apurv Ajay Kumar",
   aboutWebsite:
     "Crafted by Apurv Ajay Kumar, this portfolio showcases my expertise in web and app development, focusing on creating seamless, user-friendly experiences.",
-  email: "akapurv@gmail.com",
+  email: "aakapurv@gmail.com",
   experience: [
     {
       role: "SDE Intern",

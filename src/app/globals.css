@@ -9,7 +9,7 @@
 @layer base {
   :root {
     --md-ref-typeface-brand: "Open Sans";
-    --md-ref-typeface-plain: system-ui;
+    --md-ref-typeface-plain: "Open Sans";
 
     --md-sys-color-primary: rgb(104 84 142);
     --md-sys-color-surface-tint: rgb(104 84 142);
