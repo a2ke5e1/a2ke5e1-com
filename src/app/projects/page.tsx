@@ -52,73 +52,79 @@ const YearlyProgressInfo = {
 export default function Projects() {
   return (
     <div className="flex flex-col gap-4 my-8">
-      <div className="grid md:grid-flow-col grid-flow-row md:gap-4 gap-2 mx-auto w-fit my-8">
-        <Image
-          src="https://www.a3group.co.in/yearly-progress/images/cover.webp"
-          alt="Yearly Progress Cover"
-          width={400}
-          height={225}
-          className="rounded-2xl md:w-[400px] w-full"
-        />
-        <div className="max-w-2xl">
-          <h1 className="font-semibold md:text-4xl text-3xl text-blue-800 dark:text-blue-600">
-            {YearlyProgressInfo.name}
+      <div className="bg-primary-container sm:p-14 p-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
+        <h1 className="font-bold sm:text-display-large text-display-small font">
+          {"Projects"}
+        </h1>
+        <p className="sm:text-title-small text-body-small text-on-tertiary-container">
+          Some of the projects I have worked on and completed
+        </p>
+      </div>
+      <div className="flex flex-col gap-4">
+        <div className="sm:px-14 py-8 px-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
+          <h1
+            className="font-bold sm:text-display-small text-title-large font"
+            id="android"
+          >
+            {"Android Apps"}
           </h1>
-          <p className="text-gray-800 md:ml-2 ml-1 mt-1 md:text-base text-sm dark:text-gray-300">
-            {YearlyProgressInfo.desc.about}
-            <span className="text-blue-500 dark:text-blue-800">
-              <Link href="/yearly-progress#about-yearly-progress">
-                {" "}
-                Learn More
-              </Link>
-            </span>
-          </p>
-          <p className="text-gray-800 dark:text-gray-300 mt-5 md:ml-2 ml-1 md:text-base text-sm gap-2 flex flex-col">
-            <span>
-              <Link
-                href={
-                  "https://play.google.com/store/apps/details?id=com.a3.yearlyprogess"
-                }
-              >
-                Get Play Store
-              </Link>
-            </span>
-            <span>
-              <Link href={"https://github.com/a2ke5e1/yearly-progress-cli-py"}>
-                Get on Terminal
-              </Link>
-            </span>
-            <span>
-              <Link href={"/yearly-progress/web-app"} className="">
-                Get on Web
-              </Link>
-            </span>
+          <p className="sm:text-body-large text-body-small text-on-tertiary-container">
+            Some of the android apps I have developed
           </p>
         </div>
+        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
+          <ProjectCard
+            title="Yearly Progress"
+            description="An android app which shows progress of the day, month and year."
+            image="https://www.a3group.co.in/yearly-progress/images/cover.webp"
+            link="https://www.a3group.co.in/yearly-progress"
+            placeHolderImageData="https://www.a3group.co.in/yearly-progress/images/cover.webp"
+          />
+          <ProjectCard
+            title="Sound Profile Scheduler"
+            description="A versatile audio profile scheduler app, designed to give you full control over your device's sound settings with precision."
+            image="https://www.a3group.co.in/sound-profile-scheduler/images/cover.png"
+            link="https://www.a3group.co.in/sound-profile-scheduler"
+            placeHolderImageData="https://www.a3group.co.in/sound-profile-scheduler/images/cover.png"
+          />
+        </div>
       </div>
-
-      <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
-        <ProjectCard
-          title="Foody"
-          description="A mobile food ordering app designed for a local restaurant."
-          image="/images/project0/cover.png"
-          placeHolderImageData="/images/project0/blur/cover.jpg"
-          link="/projects/foody"
-        />
-        <ProjectCard
-          title="Logo"
-          description="An educational website for learning programming by finding and viewing coding tutorials."
-          image="/images/project1/cover.png"
-          placeHolderImageData="/images/project1/blur/cover.jpg"
-          link="/projects/logo"
-        />
-        <ProjectCard
-          title="Medk"
-          description="A tool for communities to ensure that everyone has access to necessary medicine."
-          image="/images/project2/cover.png"
-          placeHolderImageData="/images/project2/blur/cover.jpg"
-          link="/projects/medk"
-        />
+      <div className="flex flex-col gasp-4">
+        <div className="sm:px-14 py-8 px-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
+          <h1
+            className="font-bold sm:text-display-small text-title-large font"
+            id="ux"
+          >
+            {"UX/UI Designs"}
+          </h1>
+          <p className="sm:text-title-small text-body-small  text-on-tertiary-container">
+            Some of the UX/UI designs I have created while completing my Google
+            UX Design Professional Certificate
+          </p>
+        </div>
+        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
+          <ProjectCard
+            title="Foody"
+            description="A mobile food ordering app designed for a local restaurant."
+            image="/images/project0/cover.png"
+            placeHolderImageData="/images/project0/blur/cover.jpg"
+            link="/projects/foody"
+          />
+          <ProjectCard
+            title="Logo"
+            description="An educational website for learning programming by finding and viewing coding tutorials."
+            image="/images/project1/cover.png"
+            placeHolderImageData="/images/project1/blur/cover.jpg"
+            link="/projects/logo"
+          />
+          <ProjectCard
+            title="Medk"
+            description="A tool for communities to ensure that everyone has access to necessary medicine."
+            image="/images/project2/cover.png"
+            placeHolderImageData="/images/project2/blur/cover.jpg"
+            link="/projects/medk"
+          />
+        </div>
       </div>
     </div>
   );
