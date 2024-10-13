@@ -51,12 +51,12 @@ const YearlyProgressInfo = {
 
 export default function Projects() {
   return (
-    <div className="flex flex-col gap-4 my-8">
+    <div className="flex flex-col gap-4 mb-8">
       <div className="bg-primary-container sm:p-14 p-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
         <h1 className="font-bold sm:text-display-large text-display-small font">
           {"Projects"}
         </h1>
-        <p className="sm:text-title-small text-body-small text-on-tertiary-container">
+        <p className="sm:text-title-small text-body-small text-on-primary-container">
           Some of the projects I have worked on and completed
         </p>
       </div>
