@@ -78,7 +78,7 @@ const Project1: NextPage = () => {
       />
       <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         <div className="rounded-lg bg-surface-container">
-          <div className="flex flex-col gap-1 p-4">
+          <div className="flex flex-col gap-1 p-4 text-center">
             <h5 className="text-title-small text-tertiary">
               {projectData.role.heading}
             </h5>

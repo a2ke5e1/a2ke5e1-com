@@ -21,7 +21,7 @@ const Project0: NextPage = () => {
   return (
     <>
       <div className="flex flex-col gap-4 max-w-screen-xl mx-auto">
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center text-center">
           <h1 className="text-display-large font-bold">Foody</h1>
           <p className="mb-3 text-body-large">
             {"A mobile food ordering app for a Restaurant."}
