@@ -5,7 +5,7 @@ import {
   NavigationRail,
 } from "@/components/navigation-rail/navigation-rail";
 import { Footer, SwigglyLine } from "@/components/footer/footer";
-
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -18,7 +18,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="" >
+    <html lang="en" className="">
+      <Head>
+        <link
+          rel="icon"
+          type="image/png"
+          href="/favicon-48x48.png"
+          sizes="48x48"
+        />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="/apple-touch-icon.png"
+        />
+        <meta name="apple-mobile-web-app-title" content="a2ke5e1" />
+        <link rel="manifest" href="/site.webmanifest" />
+      </Head>
       <body>
         <div className="flex flex-row">
           <div className="sm:block hidden">
