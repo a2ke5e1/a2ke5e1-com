@@ -1,5 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Projects | a2ke5e1.com",
+  description: "Projects worked on by Apurv Ajay Kumar",
+};
+
 
 type ProjectCardProps = {
   title: string;
