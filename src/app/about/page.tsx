@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
 // About Me Data
 export const aboutMe = {
@@ -120,7 +121,13 @@ export default function About() {
             .
           </p>
         </div>
-        <div className="bg-surface-bright rounded-xl h-80"></div>
+        <Image
+          className="bg-surface-container rounded-xl h-80 object-cover"
+          src="/me.png"
+          alt="Logo"
+          width={800}
+          height={800}
+        />
       </div>
       <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
         <Experience />
