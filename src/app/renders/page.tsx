@@ -19,7 +19,7 @@ const RenderPage: NextPage = () => {
             learning Blender
           </p>
         </div>
-        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2">
+        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-screen-2xl mx-auto">
           {artwork.map((item) => (
             <Image
               key={item.img}
