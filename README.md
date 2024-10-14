@@ -1,6 +1,17 @@
-# MaterialWeb + NextJS
+# [a2ke5e1.com](https://a2ke5e1.com)
 
-This repo shows how to use Material Web Components in NextJs.
+This is a portfolio website built with [Next.js](https://nextjs.org/) and [Material Web Components](https://github.com/material-components/material-web).
 
-![Screenshot Buttons](.github/image.png)
-![Screenshot Dialog Box](.github/image2.png)
+![Website Screenshots](.github/images/ss-01.png)
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
