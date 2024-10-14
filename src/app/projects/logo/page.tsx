@@ -1,7 +1,6 @@
 import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
-
 export const metadata: Metadata = {
   title: "LOGO - Projects | a2ke5e1.com",
   description: "A website for finding and viewing coding tutorials",
@@ -78,7 +77,7 @@ const Project1: NextPage = () => {
       />
       <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-4">
         <div className="rounded-lg bg-surface-container">
-          <div className="flex flex-col gap-1 p-4 text-center">
+          <div className="flex flex-col gap-1 p-4">
             <h5 className="text-title-small text-tertiary">
               {projectData.role.heading}
             </h5>
@@ -211,9 +210,7 @@ const Project1: NextPage = () => {
         <h4 className="text-title-large text-primary font-bold">
           {projectData.takeaways.heading}
         </h4>
-        <p className="">
-          {projectData.takeaways.content}
-        </p>
+        <p className="">{projectData.takeaways.content}</p>
       </div>
     </div>
   );
