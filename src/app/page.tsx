@@ -18,9 +18,9 @@ export default function Home() {
           <h1 className="text-display-large font-bold text-primary">Hello!</h1>
           <p className="text-headline-large text-on-primary-container mt-4">
             I am{" "}
-            <span className="font-bold text-tertiary">Apurv Ajay Kumar</span>
+            <span className="font-bold text-tertiary">Apurv</span>
           </p>
-          <p className="text-body-large -mt-1">
+          <p className="text-body-medium -mt-1">
             {"A passionate Android App & Web Developer. "}
             <span className="text-primary hover:underline">
               <Link href={"/about"}>{"Learn More"}</Link>

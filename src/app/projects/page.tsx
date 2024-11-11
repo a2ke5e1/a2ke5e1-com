@@ -79,7 +79,7 @@ export default function Projects() {
             Some of the android apps I have developed
           </p>
         </div>
-        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
+        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-2 w-fit mx-auto">
           <ProjectCard
             title="Yearly Progress"
             description="An android app which shows progress of the day, month and year."
@@ -109,7 +109,7 @@ export default function Projects() {
             UX Design Professional Certificate
           </p>
         </div>
-        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-10 w-fit mx-auto">
+        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 md:gap-2 sm:gap-6 gap-2 w-fit mx-auto">
           <ProjectCard
             title="Foody"
             description="A mobile food ordering app designed for a local restaurant."

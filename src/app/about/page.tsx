@@ -6,7 +6,7 @@ import Image from "next/image";
 export const aboutMe = {
   name: "Apurv Ajay Kumar",
   aboutWebsite:
-    "Crafted by Apurv Ajay Kumar, this portfolio showcases my expertise in web and app development, focusing on creating seamless, user-friendly experiences.",
+    "Crafted by Apurv, this portfolio showcases my expertise in web and app development, focusing on creating seamless, user-friendly experiences.",
   email: "aakapurv@gmail.com",
   experience: [
     {
@@ -44,7 +44,7 @@ export const aboutMe = {
 // Metadata for the page
 export const metadata: Metadata = {
   title: "About | a2ke5e1.com",
-  description: "About Apurv Ajay Kumar",
+  description: "About Apurv",
 };
 
 // Reusable Section Component
@@ -110,7 +110,7 @@ export default function About() {
         <div className="bg-primary-container p-14 rounded-xl flex gap-1 flex-col justify-center">
           <h1 className="text-display-large font-bold">About</h1>
           <p className="text-title-large text-on-primary-container">
-            Hi, I am Apurv Ajay Kumar, an Android App & Web Developer. Developer
+            Hi, I am Apurv, an Android App & Web Developer. Developer
             of{" "}
             <Link
               href={aboutMe.projects.yearlyProgress.link}
