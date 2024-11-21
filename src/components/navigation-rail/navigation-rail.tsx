@@ -59,7 +59,7 @@ const NavLink = React.forwardRef<HTMLDivElement, NavLinkProps>(
   ) => {
     const Component = asChild ? Slot : "div";
     return (
-      <Link href={href} className="flex flex-col items-center">
+      <Link href={href} prefetch className="flex flex-col items-center">
         <Component
           className={cn(navLinkVariants({ active }))}
           ref={ref}
