@@ -1,19 +1,17 @@
-import fs from "fs";
-import path from "path";
+import { getBlogSlugs } from "@/lib/getBlogSlugs";
 import Link from "next/link";
 
-const blogsDirectory = path.join(process.cwd(), "src/blogs");
-
 function getBlogLinks() {
-  const fileNames = fs.readdirSync(blogsDirectory);
-  return fileNames.map((fileName) => {
-    const blogName = fileName.replace(/\.mdx?$/, "");
-    return (
-      <li key={blogName}>
-        <Link href={`/blogs/${blogName}`}>{blogName}</Link>
-      </li>
-    );
-  });
+  const blogs = getBlogSlugs();
+  return blogs.map((blog) => (
+    <Link
+      href={`/blogs/${blog.slug}`}
+      className="hover:underline"
+      key={blog.slug}
+    >
+      {blog.slug}
+    </Link>
+  ));
 }
 
 const blogLinks = getBlogLinks();
@@ -24,9 +22,12 @@ export default function BlogLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-row gap-4">
-      <div className="">{blogLinks}</div>
-      <div className="flex-1">{children}</div>
+    <div className="my-8 mx-auto max-w-screen-lg relative min-h-[80vh] content-center">
+      <h1 className="text-label-large text-primary my-4">Blogs</h1>
+      <div className="flex flex-row gap-16">
+        <div className="flex flex-col ">{blogLinks}</div>
+        <div className="flex flex-col flex-1 gap-2">{children}</div>
+      </div>
     </div>
   );
 }

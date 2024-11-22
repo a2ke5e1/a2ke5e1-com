@@ -3,6 +3,7 @@
 import { FC } from "react";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { MDXProvider } from "@mdx-js/react";
+import { customMdxComponents } from "@/mdx-components";
 
 interface MDXContentProps {
   source: MDXRemoteSerializeResult;
@@ -10,7 +11,7 @@ interface MDXContentProps {
 
 const MDXContent: FC<MDXContentProps> = ({ source }) => {
   return (
-    <MDXProvider>
+    <MDXProvider components={customMdxComponents}>
       <MDXRemote {...source} />
     </MDXProvider>
   );
