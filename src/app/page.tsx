@@ -17,8 +17,7 @@ export default function Home() {
         <div className="sm:p-14 p-4 rounded-xl flex gap-1 flex-col justify-center">
           <h1 className="text-display-large font-bold text-primary">Hello!</h1>
           <p className="text-headline-large text-on-primary-container mt-4">
-            I am{" "}
-            <span className="font-bold text-tertiary">Apurv</span>
+            I am <span className="font-bold text-tertiary">Apurv</span>
           </p>
           <p className="text-body-medium -mt-1">
             {"A passionate Android App & Web Developer. "}
@@ -27,18 +26,14 @@ export default function Home() {
             </span>
           </p>
           <div className="flex flex-row gap-2 my-8">
-            <Link href={"/projects"}>
-              <FilledButton className="w-fit">
-                Projects
-                <Icon slot="icon">explore</Icon>
-              </FilledButton>
-            </Link>
-            <Link href={"/renders"}>
-              <FilledTonalButton className="w-fit">
-                Renders
-                <Icon slot="icon">deployed_code</Icon>
-              </FilledTonalButton>
-            </Link>
+            <FilledButton className="w-fit" href={"/projects"}>
+              Projects
+              <Icon slot="icon">explore</Icon>
+            </FilledButton>
+            <FilledTonalButton className="w-fit" href={"/renders"}>
+              Renders
+              <Icon slot="icon">deployed_code</Icon>
+            </FilledTonalButton>
           </div>
         </div>
         <Image
