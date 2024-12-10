@@ -140,7 +140,7 @@
 
   ::-webkit-scrollbar-track {
     @apply bg-surface-variant;
-    border-radius: 50%;
+    border-radius: 50px;
   }
 
   ::-webkit-scrollbar-thumb {
