@@ -1,34 +1,26 @@
+import BlogLinks from "@/components/blog-links";
 import { getBlogMetadata } from "@/lib/getBlogSlugs";
-import Link from "next/link";
+import { Metadata } from "next";
 
-function getBlogLinks() {
-  const blogs = getBlogMetadata("src/blogs").sort((a, b) =>
-    a.date > b.date ? -1 : 1
-  );
-  return blogs.map((blog) => (
-    <Link
-      href={`/blogs/${blog.slug}`}
-      className="hover:underline line-clamp-1 text-label-large text-on-surface-variant"
-      key={blog.slug}
-    >
-      {blog.title}
-    </Link>
-  ));
+export const metadata: Metadata = {
+  title: "Blogs | a2ke5e1.com"
 }
 
-const blogLinks = getBlogLinks();
-
-export default function BlogLayout({
+export default async function BlogLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  
+  const blogs = await getBlogMetadata("src/blogs");
+
   return (
-    <div className="my-8 mx-auto max-w-screen-lg relative min-h-[80vh] content-center">
+    <div className="my-8 mx-auto max-w-screen-lg min-h-[80vh]">
       <div className="flex md:flex-row gap-16 flex-col">
-        <div className="flex flex-col">
+        <div className="flex flex-col bg-surface-variant p-4 rounded-lg">
           <h1 className="text-label-large text-primary mb-2">Blogs</h1>
-          {blogLinks}
+          <BlogLinks blogs={blogs} />
         </div>
         <div className="flex flex-col flex-1 gap-2">{children}</div>
       </div>

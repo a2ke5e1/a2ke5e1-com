@@ -1,9 +1,9 @@
-// lib/getBlogContent.ts
+"use server";
+
 import fs from "fs";
-import path from "path";
 import matter from "gray-matter";
 
-export function getBlogContent(slug: string) {
+export async function getBlogContent(slug: string) {
   const folder = "src/blogs/";
   const file = folder + `${slug}.md`;
   const content = fs.readFileSync(file, "utf8");

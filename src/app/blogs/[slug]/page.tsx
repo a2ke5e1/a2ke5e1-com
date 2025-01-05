@@ -2,13 +2,24 @@ import { getBlogMetadata } from "@/lib/getBlogSlugs";
 import { getBlogContent } from "@/lib/getBlogContent";
 import MDXContent from "@/components/mdx-content";
 import { serialize } from "next-mdx-remote/serialize";
-import matter from "gray-matter";
 
 type Params = Promise<{ slug: string }>;
+type Props = {
+  params: Promise<{ slug: string }>
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>
+}
 
 export async function generateStaticParams() {
   const posts = await getBlogMetadata("src/blogs");
   return posts.map((post) => ({ slug: post.slug }));
+}
+
+export async function generateMetadata({ params }: Props) {
+  const { slug } = await params;
+  const { data } = await getBlogContent(slug);
+  return {
+      title: data.title,
+  }
 }
 
 const formatDate = (date: string) => {

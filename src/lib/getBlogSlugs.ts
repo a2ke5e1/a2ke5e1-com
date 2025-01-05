@@ -1,10 +1,17 @@
-// lib/getBlogSlugs.ts
+"use server";
+
 import fs from "fs";
 import matter from "gray-matter";
-import path from "path";
 
-export function getBlogMetadata(basePath: string) {
-  const folder = basePath + "/"
+export interface BlogMetadata {
+  title: string;
+  date: string;
+  slug: string;
+}
+
+
+export async function getBlogMetadata(basePath: string) {
+  const folder = basePath + "/";
   const files = fs.readdirSync(folder);
   const markdownPosts = files.filter((file) => file.endsWith(".md"));
   const posts = markdownPosts.map((filename) => {
@@ -14,7 +21,7 @@ export function getBlogMetadata(basePath: string) {
       title: matterResult.data.title,
       date: matterResult.data.date,
       slug: filename.replace(".md", ""),
-    };
+    } as BlogMetadata;
   });
   return posts;
 }
