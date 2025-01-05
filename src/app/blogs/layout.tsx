@@ -1,15 +1,17 @@
-import { getBlogSlugs } from "@/lib/getBlogSlugs";
+import { getBlogMetadata } from "@/lib/getBlogSlugs";
 import Link from "next/link";
 
 function getBlogLinks() {
-  const blogs = getBlogSlugs();
+  const blogs = getBlogMetadata("src/blogs").sort((a, b) =>
+    a.date > b.date ? -1 : 1
+  );
   return blogs.map((blog) => (
     <Link
       href={`/blogs/${blog.slug}`}
-      className="hover:underline"
+      className="hover:underline line-clamp-1"
       key={blog.slug}
     >
-      {blog.slug}
+      {blog.title}
     </Link>
   ));
 }

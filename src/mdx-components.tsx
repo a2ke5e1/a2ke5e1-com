@@ -5,7 +5,6 @@ type CustomMdxComponents = {
   h1: ComponentType;
   h2: ComponentType;
   h3: ComponentType;
-  h4: ComponentType;
   p: ComponentType;
   a: ComponentType;
   ul: ComponentType;
@@ -20,7 +19,6 @@ export const customMdxComponents: CustomMdxComponents = {
     <h2 className="text-display-medium font-bold underline " {...props} />
   ),
   h3: (props) => <h3 className="text-display-small" {...props} />,
-  h4: (props) => <h4 className="text-label-small text-tertiary" {...props} />,
   p: (props) => <p className="text-body-large" {...props} />,
   a: (props) => (
     <a className="text-primary underline text-body-large" {...props} />

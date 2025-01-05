@@ -1,11 +1,12 @@
 // lib/getBlogContent.ts
-import fs from 'fs';
-import path from 'path';
+import fs from "fs";
+import path from "path";
+import matter from "gray-matter";
 
 export function getBlogContent(slug: string) {
-  const blogsDirectory = path.join(process.cwd(), 'src/blogs');
-  const fullPath = path.join(blogsDirectory, `${slug}.md`);
-  const fileContents = fs.readFileSync(fullPath, 'utf8');
-
-  return fileContents;
+  const folder = "src/blogs/";
+  const file = folder + `${slug}.md`;
+  const content = fs.readFileSync(file, "utf8");
+  const matterResult = matter(content);
+  return matterResult;
 }
