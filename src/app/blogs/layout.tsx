@@ -8,7 +8,7 @@ function getBlogLinks() {
   return blogs.map((blog) => (
     <Link
       href={`/blogs/${blog.slug}`}
-      className="hover:underline line-clamp-1"
+      className="hover:underline line-clamp-1 text-label-large text-on-surface-variant"
       key={blog.slug}
     >
       {blog.title}
@@ -25,9 +25,11 @@ export default function BlogLayout({
 }>) {
   return (
     <div className="my-8 mx-auto max-w-screen-lg relative min-h-[80vh] content-center">
-      <h1 className="text-label-large text-primary my-4">Blogs</h1>
-      <div className="flex flex-row gap-16">
-        <div className="flex flex-col ">{blogLinks}</div>
+      <div className="flex md:flex-row gap-16 flex-col">
+        <div className="flex flex-col">
+          <h1 className="text-label-large text-primary mb-2">Blogs</h1>
+          {blogLinks}
+        </div>
         <div className="flex flex-col flex-1 gap-2">{children}</div>
       </div>
     </div>
