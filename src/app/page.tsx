@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 
 export default function Home() {
   return (
-    <div className="max-w-screen-2xl mx-auto min-h-[68vh] flex flex-col justify-center my-8">
+    <div className="max-w-(--breakpoint-2xl) mx-auto min-h-[68vh] flex flex-col justify-center my-8">
       <div className="grid grid-flow-row sm:grid-cols-2 grid-cols-1 gap-2">
         <div className="sm:p-14 p-4 rounded-xl flex gap-1 flex-col justify-center">
           <h1 className="text-display-large font-bold text-primary">Hello!</h1>

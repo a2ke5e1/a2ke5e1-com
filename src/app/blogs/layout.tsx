@@ -16,7 +16,7 @@ export default async function BlogLayout({
   const blogs = await getBlogMetadata("src/blogs");
 
   return (
-    <div className="my-8 mx-auto max-w-screen-lg min-h-[80vh]">
+    <div className="my-8 mx-auto max-w-(--breakpoint-lg) min-h-[80vh]">
       <div className="flex md:flex-row gap-16 flex-col">
         <div className="flex flex-col bg-surface-variant p-4 rounded-lg">
           <h1 className="text-label-large text-primary mb-2">Blogs</h1>

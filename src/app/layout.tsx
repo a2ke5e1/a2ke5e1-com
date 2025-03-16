@@ -6,6 +6,14 @@ import {
 } from "@/components/navigation-rail/navigation-rail";
 import { Footer, SwigglyLine } from "@/components/footer/footer";
 import Head from "next/head";
+import { Roboto } from "next/font/google";
+import "./globals.css";
+
+const roboto = Roboto({
+  weight: ["400", "500", "700"],
+  display: "swap",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
