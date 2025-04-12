@@ -202,11 +202,6 @@ const config: Config = {
       },
     },
   },
-  variants: {
-    extend: {
-      fontWeight: ["prominent"],
-    },
-  },
   plugins: [require("tailwindcss-animate")],
 };
 export default config;
