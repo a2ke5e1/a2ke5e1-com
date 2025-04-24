@@ -25,7 +25,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Link
       href={link}
-      title={title}
       className="flex flex-col rounded-2xl bg-surface-container overflow-hidden hover:ring-2 ring-primary max-w-96"
     >
       <Image
@@ -39,10 +38,16 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         blurDataURL={placeHolderImageData}
       />
       <div className="p-4 flex flex-col gap-2">
-        <div className="text-headline-large font-semibold text-on-surface line-clamp-2">
+        <div
+          className="text-headline-medium font-semibold text-on-surface line-clamp-1"
+          title={title}
+        >
           {title}
         </div>
-        <div className="text-body-medium text-on-surface-variant">
+        <div
+          className="text-body-medium text-on-surface-variant line-clamp-2"
+          title={description}
+        >
           {description}
         </div>
       </div>
@@ -98,14 +103,14 @@ export default function Projects() {
           />
           <ProjectCard
             title="OnePlus Weather Widget"
-            description="An attempt to clone OnePlus's Classic Weather Widget with android 12 theme support. It uses OpenWeatherMap's API to get weather data."
+            description="An attempt to clone OnePlus's Classic Weather Widget with android 12 theme support."
             image="/images/oneplus-weather-widget/a12.jpg"
             link="https://github.com/a2ke5e1/OnePlus_Weather_Widget"
             placeHolderImageData="/images/oneplus-weather-widget/blur/a12.jpg"
           />
         </div>
       </div>
-      <div className="flex flex-col gasp-4">
+      <div className="flex flex-col gap-4 my-16">
         <div className="sm:px-14 py-8 px-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
           <h1
             className="font-bold sm:text-display-small text-title-large font"

@@ -146,7 +146,7 @@
 
   body {
     font-family: "Open Sans", sans-serif;
-    @apply bg-surface text-on-surface;
+    @apply bg-surface text-on-surface text-pretty;
   }
 
   .material-symbols-rounded-selected {
