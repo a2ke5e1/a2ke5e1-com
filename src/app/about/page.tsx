@@ -29,8 +29,8 @@ export const aboutMe = {
     },
   },
   languagesAndFrameworks: {
-    languages: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript"],
-    frameworks: ["Android SDK", "Flutter", "React", "Next.js"],
+    languages: ["Kotlin", "Java", "Dart", "JavaScript", "TypeScript", "C#"],
+    frameworks: ["Android SDK", "Flutter", "React", "Next.js", ".Net Core"],
   },
   socialMedia: {
     github: "https://www.github.com/a2ke5e1",
@@ -75,9 +75,9 @@ const Experience = () => (
 // Education Component
 const Education = () => (
   <Section title="Education">
-    <article className="text-title-medium text-on-surface-variant">
-      <p>{aboutMe.education.undergraduate.name}</p>
-      <p className="text-body-medium">
+    <article className="text-on-surface-variant">
+      <p className="text-body-large">{aboutMe.education.undergraduate.name}</p>
+      <p className="text-label-large ">
         {aboutMe.education.undergraduate.institute}
       </p>
     </article>
@@ -88,14 +88,14 @@ const Education = () => (
 const LanguagesAndFrameworks = () => (
   <Section title="Languages & Frameworks">
     <article className="text-title-medium text-on-surface-variant">
-      <p>Languages</p>
-      <p className="text-body-medium">
+      <p className="text-label-large text-primary">Languages</p>
+      <p className="text-body-large">
         {aboutMe.languagesAndFrameworks.languages.join(", ")}
       </p>
     </article>
-    <article className="text-title-medium text-on-surface-variant">
-      <p>Frameworks</p>
-      <p className="text-body-medium">
+    <article className="text-on-surface-variant">
+      <p className="text-label-large text-primary">Frameworks</p>
+      <p className="text-body-large">
         {aboutMe.languagesAndFrameworks.frameworks.join(", ")}
       </p>
     </article>
@@ -110,8 +110,7 @@ export default function About() {
         <div className="bg-primary-container p-14 rounded-xl flex gap-1 flex-col justify-center">
           <h1 className="text-display-large font-bold">About</h1>
           <p className="text-title-large text-on-primary-container">
-            Hi, I am Apurv, an Android App & Web Developer. Developer
-            of{" "}
+            Hi, I am Apurv, an Android App & Web Developer. Developer of{" "}
             <Link
               href={aboutMe.projects.yearlyProgress.link}
               className="underline"
