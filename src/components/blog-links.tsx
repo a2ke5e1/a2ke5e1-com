@@ -17,7 +17,9 @@ const BlogLinks = ({ blogs }: BlogLinksProps) => {
     .map((blog) => (
       <Link
         href={`/blogs/${blog.slug}`}
-        className={`hover:underline line-clamp-1 text-label-large text-on-surface-variant ${isActive(blog.slug) ? "font-semibold" : ""}`}
+        className={`hover:underline line-clamp-1 text-label-large text-on-surface-variant ${
+          isActive(blog.slug) ? "font-semibold" : ""
+        }`}
         key={blog.slug}
       >
         {blog.title}

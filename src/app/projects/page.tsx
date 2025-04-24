@@ -7,7 +7,6 @@ export const metadata: Metadata = {
   description: "Projects worked on by Apurv Ajay Kumar",
 };
 
-
 type ProjectCardProps = {
   title: string;
   description: string;
@@ -26,6 +25,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   return (
     <Link
       href={link}
+      title={title}
       className="flex flex-col rounded-2xl bg-surface-container overflow-hidden hover:ring-2 ring-primary max-w-96"
     >
       <Image
@@ -39,10 +39,12 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         blurDataURL={placeHolderImageData}
       />
       <div className="p-4 flex flex-col gap-2">
-        <div className="text-headline-large font-semibold text-on-surface">
+        <div className="text-headline-large font-semibold text-on-surface line-clamp-2">
           {title}
         </div>
-        <div className="text-body-medium text-on-surface">{description}</div>
+        <div className="text-body-medium text-on-surface-variant">
+          {description}
+        </div>
       </div>
     </Link>
   );
@@ -93,6 +95,13 @@ export default function Projects() {
             image="https://www.a3group.co.in/sound-profile-scheduler/images/cover.png"
             link="https://www.a3group.co.in/sound-profile-scheduler"
             placeHolderImageData="https://www.a3group.co.in/sound-profile-scheduler/images/cover.png"
+          />
+          <ProjectCard
+            title="OnePlus Weather Widget"
+            description="An attempt to clone OnePlus's Classic Weather Widget with android 12 theme support. It uses OpenWeatherMap's API to get weather data."
+            image="/images/oneplus-weather-widget/a12.jpg"
+            link="https://github.com/a2ke5e1/OnePlus_Weather_Widget"
+            placeHolderImageData="/images/oneplus-weather-widget/blur/a12.jpg"
           />
         </div>
       </div>
