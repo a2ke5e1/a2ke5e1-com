@@ -1,4 +1,4 @@
-@import "material-symbols" layer(base);
+@import "material-symbols/rounded.css" layer(base);
 
 @layer theme, base, components, utilities;
 
