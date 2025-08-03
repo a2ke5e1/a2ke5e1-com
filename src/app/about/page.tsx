@@ -10,9 +10,16 @@ export const aboutMe = {
   email: "aakapurv@gmail.com",
   experience: [
     {
+      role: "Assistant System Engineer",
+      company: "Capsitech",
+      duration: "July, 2025 - Current",
+      link: "https://www.capsitech.com/",
+    },
+    {
       role: "SDE Intern",
       company: "duuet.care",
       duration: "Dec, 2023 - Jan, 2024",
+      link: "https://www.duuet.care/",
     },
   ],
   education: {
@@ -64,11 +71,21 @@ const Section = ({
 // Experience Component
 const Experience = () => (
   <Section title="Experience">
-    <article className="text-title-medium text-on-surface-variant">
-      <p>{aboutMe.experience[0].role}</p>
-      <p className="text-body-medium">{aboutMe.experience[0].company}</p>
-      <p className="text-body-small">{aboutMe.experience[0].duration}</p>
-    </article>
+    {aboutMe.experience.map((exp, index) => (
+      <article
+        className="text-title-medium text-on-surface-variant"
+        key={index}
+      >
+        <p className="text-primary">{exp.role}</p>
+        <Link
+          href={exp.link}
+          className="text-body-medium m-0 p-0 hover:underline hover:underline-offset-2"
+        >
+          {exp.company}
+        </Link>
+        <p className="text-body-small">{exp.duration}</p>
+      </article>
+    ))}
   </Section>
 );
 
@@ -76,7 +93,9 @@ const Experience = () => (
 const Education = () => (
   <Section title="Education">
     <article className="text-on-surface-variant">
-      <p className="text-body-large">{aboutMe.education.undergraduate.name}</p>
+      <p className="text-body-large text-primary">
+        {aboutMe.education.undergraduate.name}
+      </p>
       <p className="text-label-large ">
         {aboutMe.education.undergraduate.institute}
       </p>
