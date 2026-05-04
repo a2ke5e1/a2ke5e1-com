@@ -12,7 +12,7 @@ export const aboutMe = {
     {
       role: "Assistant System Engineer",
       company: "Capsitech",
-      duration: "July, 2025 - Current",
+      duration: "July, 2025 - March, 2026",
       link: "https://www.capsitech.com/",
     },
     {
