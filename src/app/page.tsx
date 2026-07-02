@@ -1,8 +1,7 @@
 import { Metadata, NextPage } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { aboutMe } from "./about/page";
-import { FilledButton, FilledTonalButton } from "@/components/button/button";
+import { NavButton } from "@/components/button/nav-button";
 import { Icon } from "@/components/icon/icon";
 
 export const metadata: Metadata = {
@@ -26,14 +25,14 @@ export default function Home() {
             </span>
           </p>
           <div className="flex flex-row gap-2 my-8">
-            <FilledButton className="w-fit" href={"/projects"}>
+            <NavButton variant="filled" className="w-fit" href="/projects">
               Projects
               <Icon slot="icon">explore</Icon>
-            </FilledButton>
-            <FilledTonalButton className="w-fit" href={"/renders"}>
+            </NavButton>
+            <NavButton variant="filled-tonal" className="w-fit" href="/renders">
               Renders
               <Icon slot="icon">deployed_code</Icon>
-            </FilledTonalButton>
+            </NavButton>
           </div>
         </div>
         <Image
