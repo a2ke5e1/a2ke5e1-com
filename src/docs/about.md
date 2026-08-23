@@ -30,14 +30,32 @@ software where engineering quality and product thinking both matter.
 
 ## Technical Skills
 
-### Languages
+#### Languages
 
-`Kotlin` `Java` `Dart` `JavaScript` `TypeScript` `C#` `Python`
+1. Javascript/Typescript
+2. Kotlin
+3. Python
+4. Dart
+5. C#
 
-### Frameworks & Libraries
+#### Frameworks & Libraries
 
-`Android SDK` `Flutter` `React` `Next.js` `Django` `Django REST Framework` `Node.js` `Express` `.NET Core`
+1. Node.js
+2. Express
+3. Android SDK
+4. Flutter 
+5. React
+6. Next.js 
+7. Django
+8. Django REST Framework
+9. .NET Core`
 
-### Databases & Infrastructure
+#### Databases & Infrastructure
 
-`PostgreSQL` `MongoDB` `Redis` `Docker` `Linux` `Nginx` `CI/CD`
+1. PostgreSQL
+2. MongoDB
+3. Redis
+4. Docker
+5. Linux
+6. Nginx
+7. CI/CD
