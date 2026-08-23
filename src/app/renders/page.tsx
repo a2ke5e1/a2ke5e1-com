@@ -1,3 +1,6 @@
+import { Footer } from "@/components/core/Footer/Footer";
+import { PageShell } from "@/components/core/PageShell/PageShell";
+import { HeroBanner } from "@/components/renders/HeroBanner";
 import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
@@ -8,18 +11,12 @@ export const metadata: Metadata = {
 
 const RenderPage: NextPage = () => {
   return (
-    <>
+    <PageShell>
       <div className="mb-8 flex flex-col gap-4">
-        <div className="bg-tertiary-container sm:p-14 p-8 rounded-xl flex gap-1 flex-col justify-center items-center text-center">
-          <h1 className="font-bold sm:text-display-large text-display-small font">
-            {"Renders & Artworks"}
-          </h1>
-          <p className="sm:text-title-small text-body-small text-on-tertiary-container">
-            Some wallpapers, logos and other artworks I have created while
-            learning Blender
-          </p>
+        <div className="mx-auto w-full px-4 py-8 md:px-6 md:py-12">
+          <HeroBanner />
         </div>
-        <div className="grid grid-flow-row md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-2 max-w-(--breakpoint-2xl) mx-auto">
+        <div className="grid grid-flow-row md:grid-cols-2 grid-cols-1 gap-2 mx-auto w-full max-w-4xl px-4 md:px-6 ">
           {artwork.map((item) => (
             <Image
               key={item.img}
@@ -36,17 +33,18 @@ const RenderPage: NextPage = () => {
           ))}
         </div>
       </div>
-    </>
+      <Footer />
+    </PageShell>
   );
 };
 export default RenderPage;
 
 const artwork = [
-  {
-    img: "/images/renders/test4.png",
-    title: "Donout with Tea",
-    blur: "/images/renders/blur/test4.jpg",
-  },
+  // {
+  //   img: "/images/renders/test4.png",
+  //   title: "Donout with Tea",
+  //   blur: "/images/renders/blur/test4.jpg",
+  // },
   {
     img: "/images/renders/donout3.png",
     title: "Donout 2",

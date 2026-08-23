@@ -1,0 +1,35 @@
+/* GFM task lists: remove the bullet on checkbox rows */
+.contains-task-list {
+  list-style: none;
+}
+
+/* GFM task lists: custom checkbox that keeps the M3 primary color when disabled */
+.contains-task-list input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--md-sys-color-outline);
+  border-radius: 0.25rem;
+  background-color: var(--md-sys-color-surface);
+  cursor: default;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.contains-task-list input[type="checkbox"]:checked {
+  background-color: var(--md-sys-color-primary);
+  border-color: var(--md-sys-color-primary);
+}
+
+.contains-task-list input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 1px;
+  width: 5px;
+  height: 9px;
+  border: solid var(--md-sys-color-on-primary);
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}

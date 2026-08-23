@@ -1,65 +1,65 @@
 import type { Metadata } from "next";
+import { Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import {
-  BottomNavigation,
-  NavigationRail,
-} from "@/components/navigation-rail/navigation-rail";
-import { Footer, SwigglyLine } from "@/components/footer/footer";
-import Head from "next/head";
-import { Roboto } from "next/font/google";
-import "./globals.css";
+import { MaterialSymbols } from "@/components/core/Icons/MaterialSymbols";
+import { AppShell } from "@/components/core/AppShell/AppShell";
+import { AUTHOR_NAME, BASE_URL } from "@/config/config";
 
-const roboto = Roboto({
-  weight: ["400", "500", "700"],
-  display: "swap",
+
+const nunito = Nunito({
+  variable: "--font-nunito-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
-  title: "a2ke5e1.com",
-  description: "A portfolio website for a2ke5e1.",
+  metadataBase: new URL(BASE_URL),
+  title: { default: AUTHOR_NAME, template: `%s - ${AUTHOR_NAME}` },
+  description: "A2K — web and mobile products, backend systems, and APIs.",
+  keywords: ["a2k", "portfolio", "react", "next.js", "django", "flutter"],
+  authors: [{ name: AUTHOR_NAME }],
+  creator: AUTHOR_NAME,
+  openGraph: { siteName: AUTHOR_NAME, type: "website", locale: "en_US" },
+  twitter: { card: "summary_large_image" },
+  robots: { index: true, follow: true },
+  manifest: "/site.webmanifest",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", type: "image/x-icon" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/favicon-48x48.png", type: "image/png", sizes: "48x48" },
+      { url: "/apple-touch-icon.png", type: "image/png", sizes: "180x180" },
+      {
+        url: "/web-app-manifest-192x192.png",
+        type: "image/png",
+        sizes: "192x192",
+      },
+      {
+        url: "/web-app-manifest-512x512.png",
+        type: "image/png",
+        sizes: "512x512",
+      },
+    ],
+  },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="en" className="">
-      <Head>
-        <link
-          rel="icon"
-          type="image/png"
-          href="/favicon-48x48.png"
-          sizes="48x48"
-        />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="shortcut icon" href="/favicon.ico" />
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <meta name="apple-mobile-web-app-title" content="a2ke5e1" />
-        <link rel="manifest" href="/site.webmanifest" />
-      </Head>
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${nunito.variable} ${geistMono.variable} h-full antialiased`}
+    >
+      <head>
+        <MaterialSymbols />
+        <script src="/theme-init.js" />
+      </head>
       <body>
-        <div className="flex flex-row">
-          <div className="sm:block hidden">
-            <NavigationRail />
-          </div>
-          <div className="bg-surface-container-lowest text-on-surface w-full rounded-2xl p-4 mt-4 mr-4 ml-4 sm:ml-[4.5rem] sm:mb-4 mb-20 ">
-            {children}
-            <div className="flex flex-col gap-2">
-              <SwigglyLine />
-              <Footer />
-            </div>
-          </div>
-        </div>
-        <div className="sm:hidden block">
-          <BottomNavigation />
-        </div>
+        <AppShell>{children}</AppShell>
       </body>
     </html>
   );
