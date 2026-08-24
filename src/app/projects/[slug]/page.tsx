@@ -41,7 +41,7 @@ export default async function ProjectPage({
           title={project.metadata.title}
           description={project.metadata.subtitle}
           image={{
-            src: project.metadata.cover ?? "/images/renders/test4.png",
+            src: project.cover ?? "/images/renders/test4.png",
             alt: project.metadata.title,
           }}
         />

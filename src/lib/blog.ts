@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
 import type { MDXContent } from "mdx/types";
+import type { StaticImageData } from "next/image";
 
 export interface BlogMeta {
   title: string;
@@ -8,9 +9,10 @@ export interface BlogMeta {
   date?: Date | string;
   tags?: string[];
   featured?: boolean;
+  cover?: string;
 }
 
-export type Blog = BlogMeta & { slug: string };
+export type Blog = Omit<BlogMeta, "cover"> & { slug: string; cover?: StaticImageData };
 
 interface BlogModule {
   default: MDXContent;
@@ -37,10 +39,21 @@ export async function getAllBlogSlugs(): Promise<string[]> {
 
 export async function getBlog(
   slug: string,
-): Promise<(BlogModule & { slug: string }) | undefined> {
+): Promise<(BlogModule & { slug: string; cover?: StaticImageData }) | undefined> {
   try {
     const mod = await import(`@/docs/blog/${slug}/index.md`);
-    return { slug, ...(mod as BlogModule) };
+    const blog = { slug, ...(mod as BlogModule) };
+    const cover = await getCover(slug);
+    return { ...blog, cover };
+  } catch {
+    return undefined;
+  }
+}
+
+async function getCover(slug: string): Promise<StaticImageData | undefined> {
+  try {
+    const mod = await import(`@/docs/blog/${slug}/images/cover.webp`);
+    return (mod as { default: StaticImageData }).default;
   } catch {
     return undefined;
   }
@@ -57,7 +70,7 @@ export async function getAllBlogs(): Promise<Blog[]> {
     slugs.map(async (slug): Promise<Blog | null> => {
       const blog = await getBlog(slug);
       if (!blog) return null;
-      return { slug, ...blog.metadata };
+      return { slug, ...blog.metadata, cover: blog.cover };
     }),
   );
   return blogs

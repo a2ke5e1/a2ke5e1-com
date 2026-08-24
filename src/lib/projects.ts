@@ -43,10 +43,12 @@ export async function getAllProjectSlugs(): Promise<string[]> {
 
 export async function getProject(
   slug: string,
-): Promise<(ProjectModule & { slug: string }) | undefined> {
+): Promise<(ProjectModule & { slug: string; cover?: StaticImageData }) | undefined> {
   try {
     const mod = await import(`@/docs/projects/${slug}/index.md`);
-    return { slug, ...(mod as ProjectModule) };
+    const project = { slug, ...(mod as ProjectModule) };
+    const cover = await getCover(slug);
+    return { ...project, cover };
   } catch {
     return undefined;
   }

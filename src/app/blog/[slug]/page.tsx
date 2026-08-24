@@ -42,7 +42,7 @@ export default async function BlogPostPage({
           description={blog.metadata.description}
           date={blog.metadata.date}
           image={{
-            src: "/images/renders/test4.png",
+            src: blog.cover ?? "/images/renders/test4.png",
             alt: blog.metadata.title,
           }}
         />

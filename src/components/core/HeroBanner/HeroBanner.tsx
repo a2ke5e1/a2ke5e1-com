@@ -1,11 +1,12 @@
 import Image from "next/image";
+import type { StaticImageData } from "next/image";
 import { cn } from "@/lib/utils";
 
 export interface HeroBannerProps {
   title?: string;
   description?: string;
   date?: Date | string;
-  image: { src: string; alt: string };
+  image: { src: string | StaticImageData; alt: string };
   className?: string;
 }
 
