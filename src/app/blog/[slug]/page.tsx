@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { formatBlogDate, getAllBlogSlugs, getBlog } from "@/lib/blog";
+import { getAllBlogSlugs, getBlog } from "@/lib/blog";
 import { PageShell } from "@/components/core/PageShell/PageShell";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { Footer } from "@/components/core/Footer/Footer";
 
 export const dynamicParams = false;
@@ -35,29 +36,18 @@ export default async function BlogPostPage({
 
   return (
     <PageShell>
+      <div className="mx-auto w-full p-2">
+        <HeroBanner
+          title={blog.metadata.title}
+          description={blog.metadata.description}
+          date={blog.metadata.date}
+          image={{
+            src: "/images/renders/test4.png",
+            alt: blog.metadata.title,
+          }}
+        />
+      </div>
       <div className="mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12">
-        <header className="mb-10">
-          {blog.metadata.date && (
-            <time
-              dateTime={
-                typeof blog.metadata.date === "string"
-                  ? blog.metadata.date
-                  : blog.metadata.date.toISOString().split("T")[0]
-              }
-              className="text-label-large text-on-surface-variant"
-            >
-              {formatBlogDate(blog.metadata.date)}
-            </time>
-          )}
-          <h1 className="text-display-large font-semibold text-on-surface">
-            {blog.metadata.title}
-          </h1>
-          {blog.metadata.description && (
-            <p className="mt-2 text-title-large text-on-surface-variant">
-              {blog.metadata.description}
-            </p>
-          )}
-        </header>
         <Content
           components={{
             wrapper: ({ children }: { children: React.ReactNode }) => (

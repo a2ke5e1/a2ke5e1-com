@@ -1,17 +1,14 @@
 import {
-  AUTHOR_EMAIL,
   BASE_URL,
   EMAIL_URL,
   GITHUB_URL,
   LINKEDIN_URL,
-  TWITTER_URL,
+  TWITTER_URL
 } from "@/config/config";
-import Link from "next/link";
-import { Icon } from "../Icons/icon";
-import { Icons } from "../Icons/icons";
 import Image from "next/image";
+import Link from "next/link";
 
-export const SwigglyLine = () => {
+const SwigglyLine = () => {
   return (
     <svg
       _ngcontent-evd-c22=""
@@ -59,14 +56,14 @@ export const Footer = () => {
           <div className="flex flex-col gap-1 my-2">
             {Object.entries({
               Email: EMAIL_URL,
-              Github: GITHUB_URL,
               Linkedin: LINKEDIN_URL,
+              Github: GITHUB_URL,
               X: TWITTER_URL,
             }).map(([key, value]) => (
               <Link
                 href={value}
                 key={key}
-                className="underline text-primary text-body-medium font-semibold"
+                className="underline text-primary text-label-large font-semibold"
               >
                 {key}
               </Link>

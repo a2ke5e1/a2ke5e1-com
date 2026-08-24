@@ -57,17 +57,17 @@ export const Card = ({
       {date && (
         <time
           dateTime={toDateInput(date)}
-          className="text-label-medium text-on-surface-variant"
+          className="text-label-medium text-on-surface-variant font-semibold"
         >
           {formatDate(date)}
         </time>
       )}
-      <h2 className="text-title-large text-on-surface font-bold">{title}</h2>
+      <h2 className="text-title-large text-on-surface font-extrabold">{title}</h2>
       {/* {subtitle && (
         <p className="text-body-medium text-on-surface-variant">{subtitle}</p>
       )} */}
       {description && (
-        <p className="text-body-medium text-on-surface-variant line-clamp-3">
+        <p className="text-body-medium text-on-surface-variant line-clamp-3 font-medium">
           {description}
         </p>
       )}

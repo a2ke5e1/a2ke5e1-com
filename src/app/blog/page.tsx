@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllBlogs } from "@/lib/blog";
 import { PageShell } from "@/components/core/PageShell/PageShell";
 import { Card } from "@/components/core/Card/Card";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { Footer } from "@/components/core/Footer/Footer";
 
 export const metadata: Metadata = {
@@ -15,14 +16,14 @@ export default async function BlogPage() {
 
   return (
     <PageShell>
-      <div className="mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12">
-        <h1 className="text-display-large font-semibold text-on-surface">
-          Blog
-        </h1>
-        <p className="mt-3 text-body-large text-on-surface-variant">
-          I like documenting the reasoning behind the systems I build, not just
-          the final result.
-        </p>
+      <div className="mx-auto w-full p-2">
+        <HeroBanner
+          title="Blog"
+          description="I like documenting the reasoning behind the systems I build, not just the final result."
+          image={{ src: "/images/renders/test4.png", alt: "Blog cover" }}
+        />
+      </div>
+      <div className="mx-auto w-full max-w-4xl px-4 pb-8 md:px-6 md:pb-12">
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {blogs.map((blog) => (
             <Card

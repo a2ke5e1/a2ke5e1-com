@@ -1,6 +1,6 @@
 import { Footer } from "@/components/core/Footer/Footer";
 import { PageShell } from "@/components/core/PageShell/PageShell";
-import { HeroBanner } from "@/components/renders/HeroBanner";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
@@ -13,8 +13,12 @@ const RenderPage: NextPage = () => {
   return (
     <PageShell>
       <div className="mb-8 flex flex-col gap-4">
-        <div className="mx-auto w-full px-4 py-8 md:px-6 md:py-12">
-          <HeroBanner />
+        <div className="mx-auto w-full p-2">
+          <HeroBanner
+            title="Renders"
+            description="Artwork and Renders by Apurv Ajay Kumar"
+            image={{ src: "/images/renders/test4.png", alt: "Donout with Tea" }}
+          />
         </div>
         <div className="grid grid-flow-row md:grid-cols-2 grid-cols-1 gap-2 mx-auto w-full max-w-4xl px-4 md:px-6 ">
           {artwork.map((item) => (

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { PageShell } from "@/components/core/PageShell/PageShell";
-import { HeroBanner } from "@/components/about/HeroBanner";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { ExperienceCards } from "@/components/about/ExperienceCards";
 import AboutContent from "@/docs/about.md";
 import { Footer } from "@/components/core/Footer/Footer";
@@ -14,11 +14,14 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <PageShell>
-      <div className="mx-auto w-full px-4 py-8 md:px-6 md:py-12">
-        <HeroBanner />
+      <div className="mx-auto w-full p-2">
+        <HeroBanner
+          title="About"
+          image={{ src: "/me.png", alt: "Apurv Kumar" }}
+        />
       </div>
 
-      <div className="mx-auto w-full max-w-4xl px-4 pb-8 md:px-6 md:pb-12">
+      <div className="mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12">
         <AboutContent
           components={{
             wrapper: ({ children }: { children: React.ReactNode }) => (

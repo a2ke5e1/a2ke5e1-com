@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getAllProjects } from "@/lib/projects";
 import { PageShell } from "@/components/core/PageShell/PageShell";
 import { Card } from "@/components/core/Card/Card";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { Footer } from "@/components/core/Footer/Footer";
 
 export const metadata: Metadata = {
@@ -14,13 +15,14 @@ export default async function ProjectsPage() {
 
   return (
     <PageShell>
-      <div className="mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12">
-        <h1 className="text-display-large font-semibold text-on-surface">
-          Projects
-        </h1>
-        <p className="mt-3 text-body-large text-on-surface-variant">
-          A collection of things I&apos;ve built.
-        </p>
+      <div className="mx-auto w-full p-2">
+        <HeroBanner
+          title="Projects"
+          description="A collection of things I&apos;ve built."
+          image={{ src: "/images/renders/test4.png", alt: "Projects cover" }}
+        />
+      </div>
+      <div className="mx-auto w-full max-w-4xl px-4 pb-8 md:px-6 md:pb-12">
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {projects.map((project) => (
             <Card

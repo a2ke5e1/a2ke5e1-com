@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { getAllProjectSlugs, getProject } from "@/lib/projects";
 import { PageShell } from "@/components/core/PageShell/PageShell";
 import { TechBadge } from "@/components/projects/TechBadge";
+import { HeroBanner } from "@/components/core/HeroBanner";
 import { Footer } from "@/components/core/Footer/Footer";
 
 export const dynamicParams = false;
@@ -35,17 +36,17 @@ export default async function ProjectPage({
 
   return (
     <PageShell>
+      <div className="mx-auto w-full p-2">
+        <HeroBanner
+          title={project.metadata.title}
+          description={project.metadata.subtitle}
+          image={{
+            src: project.metadata.cover ?? "/images/renders/test4.png",
+            alt: project.metadata.title,
+          }}
+        />
+      </div>
       <div className="mx-auto w-full max-w-4xl px-4 py-8 md:px-6 md:py-12">
-        <header className="mb-10">
-          <h1 className="text-display-large font-semibold text-on-surface">
-            {project.metadata.title}
-          </h1>
-          {project.metadata.subtitle && (
-            <p className="mt-2 text-title-large text-on-surface-variant">
-              {project.metadata.subtitle}
-            </p>
-          )}
-        </header>
         <Content
           components={{
             wrapper: ({ children }: { children: React.ReactNode }) => (
