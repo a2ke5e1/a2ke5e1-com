@@ -33,7 +33,6 @@ export const Card = ({
   cover,
   date,
   title,
-  subtitle,
   description,
   tags,
   className,

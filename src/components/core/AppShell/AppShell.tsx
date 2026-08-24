@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import { NavigationRail } from "../NavigationRail/NavigationRail";
 import { NavigationDrawer } from "../NavigationDrawer/NavigationDrawer";
 import { TopAppBar } from "../TopAppBar/TopAppBar";
-import { Footer } from "../Footer/Footer";
 
 export const AppShell = ({ children }: { children: React.ReactNode }) => {
   const pathname = usePathname();

@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { Nunito, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { MaterialSymbols } from "@/components/core/Icons/MaterialSymbols";
@@ -56,7 +57,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     >
       <head>
         <MaterialSymbols />
-        <script src="/theme-init.js" />
+        <Script src="/theme-init.js" strategy="beforeInteractive" />
       </head>
       <body>
         <AppShell>{children}</AppShell>
