@@ -7,8 +7,6 @@ featured: false
 tech: [UI/UX]
 ---
 
-![Cover](./images/cover.webp)
-
 ## My Role
 
 I was working alone on this project, hence I was the lead UX Designer and Researcher throughout the whole project.

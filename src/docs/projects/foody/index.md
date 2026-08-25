@@ -7,8 +7,6 @@ featured: false
 tech: [UI/UX]
 ---
 
-![](./images/cover.webp)
-
 ## My Role
 
 I worked alone on this project, taking responsibility for the entire product experience. I was the lead UX designer and researcher throughout the project.
