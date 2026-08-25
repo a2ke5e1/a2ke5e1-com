@@ -13,7 +13,9 @@ const glyphs = {
   DarkMode: "dark_mode",
   LightMode: "light_mode",
   Email: "email", 
-  DeployedCode: "deployed_code"
+  DeployedCode: "deployed_code",
+  ContentCopy: "content_copy",
+  Check: "check",
 } as const;
 
 export type IconName = (typeof glyphs)[keyof typeof glyphs];

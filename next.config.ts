@@ -24,7 +24,20 @@ const withMDX = createMDX({
       remarkExperienceCards,
       remarkMediaSplit,
     ],
-    rehypePlugins: ["rehype-slug", "rehype-mdx-import-media"],
+    rehypePlugins: [
+      "rehype-slug",
+      "rehype-mdx-import-media",
+      [
+        "rehype-pretty-code",
+        {
+          theme: {
+            dark: "github-dark",
+            light: "github-light",
+          },
+          keepBackground: false,
+        },
+      ],
+    ],
   },
 });
 

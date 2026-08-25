@@ -7,6 +7,7 @@ import { PageShell } from "@/components/core/PageShell/PageShell";
 import { MediaSplit } from "@/components/mdx/MediaSplit";
 import { MediaGallery } from "@/components/mdx/MediaGallery";
 import { MdxIframe } from "@/components/mdx/MdxIframe";
+import { Pre } from "@/components/mdx/CodeBlock";
 import { Footer } from "./components/core/Footer/Footer";
 
 type HeadingProps = ComponentProps<"h1"> & { level?: 1 | 2 | 3 | 4 | 5 | 6 };
@@ -80,7 +81,7 @@ function MDXImage({
 
 function MDXLink({ href, className, children, ...props }: ComponentProps<"a">) {
   const classes = cn(
-    "font-medium text-primary underline decoration-primary/40 underline-offset-2 transition-colors hover:decoration-primary",
+    "font-medium text-primary underline decoration-primary/40 underline-offset-2 transition-colors duration-standard-fast-effects ease-standard-fast-effects hover:decoration-primary",
     className,
   );
 
@@ -204,7 +205,7 @@ const components: MDXComponents = {
   tr: ({ className, children, ...props }) => (
     <tr
       className={cn(
-        "transition-colors duration-150 hover:bg-surface-container-low/40",
+        "transition-colors duration-standard-fast-effects ease-standard-fast-effects hover:bg-surface-container-low/40",
         className,
       )}
       {...props}
@@ -234,28 +235,52 @@ const components: MDXComponents = {
       {children}
     </td>
   ),
-  code: ({ className, children, ...props }) => (
-    <code
+  figure: ({ className, ...props }) => (
+    <figure className={cn("my-6", className)} {...props} />
+  ),
+  figcaption: ({ className, ...props }) => (
+    <figcaption
       className={cn(
-        "inline-flex items-center rounded-lg bg-surface-container-high px-2.5 py-1 font-mono text-body-small font-medium text-primary",
+        "rounded-t-2xl border-x border-t border-outline-variant/30 bg-surface-container px-4 py-2 font-mono text-label-small font-semibold text-on-surface-variant",
         className,
       )}
       {...props}
-    >
-      {children}
-    </code>
+    />
   ),
-  pre: ({ className, children, ...props }) => (
-    <pre
-      className={cn(
-        "mb-4 overflow-x-auto rounded-2xl bg-surface-container p-4 font-mono text-body-medium text-on-surface [&_code]:bg-transparent [&_code]:p-0 [&_code]:text-on-surface",
-        className,
-      )}
-      {...props}
-    >
-      {children}
-    </pre>
-  ),
+  code: ({ className, children, ...props }) => {
+    const isBlock = Boolean(
+      (props as Record<string, unknown>)["data-language"] ||
+        (props as Record<string, unknown>)["data-theme"] ||
+        (props as Record<string, unknown>)["data-line-numbers"] !== undefined,
+    );
+
+    if (isBlock) {
+      return (
+        <code
+          className={cn(
+            "grid font-mono text-body-small leading-relaxed text-on-surface",
+            className,
+          )}
+          {...props}
+        >
+          {children}
+        </code>
+      );
+    }
+
+    return (
+      <code
+        className={cn(
+          "inline-flex items-center rounded-lg bg-surface-container-high px-2 py-0.5 font-mono text-body-small font-medium text-primary",
+          className,
+        )}
+        {...props}
+      >
+        {children}
+      </code>
+    );
+  },
+  pre: (props) => <Pre {...props} />,
   blockquote: ({ className, children, ...props }) => (
     <blockquote
       className={cn(
