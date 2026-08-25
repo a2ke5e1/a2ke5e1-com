@@ -16,9 +16,9 @@ software where engineering quality and product thinking both matter.
 
 | company   | position                    | duration                     |
 | --------- | --------------------------- | ---------------------------- |
-| Freelance | Full-Stack Engineer         | 2026 — Present               |
-| Capsitech | Assistant System Engineer   | July 2025 — March 2026       |
-| duet.care | Software Development Intern | December 2023 — January 2024 |
+| Freelance | Full-Stack Engineer         | June, 2026 - Present               |
+| Capsitech | Assistant System Engineer   | July, 2025 - March, 2026       |
+| duet.care | Software Development Intern | December, 2023 - January, 2024 |
 
 :::
 
