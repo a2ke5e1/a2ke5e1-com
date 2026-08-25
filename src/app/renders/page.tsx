@@ -5,7 +5,7 @@ import { Metadata, NextPage } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "Renders | a2ke5e1.com",
+  title: "Renders",
   description: "Artwork and Renders by Apurv Ajay Kumar",
 };
 
